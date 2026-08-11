@@ -1,0 +1,66 @@
+name: Bug Report
+description: Report a bug and, if possible, suggest a fix.
+title: "[BUG]: "
+labels:
+  - bug
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug!
+
+        Before submitting, please check whether a similar issue already exists.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the Bug
+      description: A clear and concise description of the problem.
+      placeholder: Describe what happened...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Explain how to reproduce the issue.
+      placeholder: |
+        1. Clone the repository
+        2. Run `npm install`
+        3. Execute `npm run dev`
+        4. Observe the issue
+    validations:
+      required: false
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: Describe what you expected to happen.
+      placeholder: Describe the expected outcome...
+    validations:
+      required: false
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Provide any relevant environment details.
+      placeholder: |
+        - OS:
+        - Node.js:
+        - Browser:
+        - Package version:
+    validations:
+      required: false
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Possible Fix
+      description: If you have an idea for a fix, describe it here.
+      placeholder: Suggest a possible solution...
+    validations:
+      required: false

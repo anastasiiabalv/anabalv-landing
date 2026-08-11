@@ -3,6 +3,7 @@ language: "en-US"
 reviews:
   profile: "chill" # Options: chill, assertive (chill is recommended for creative frontend work)
   collapse_walkthroughs: false
+  high_level_summary: true 
   
   # Prevent CodeRabbit from wasting API calls reviewing build artifacts
   path_filters:

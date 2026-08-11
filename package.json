@@ -9,7 +9,7 @@
     "preview": "nuxt preview",
     "clean": "npx nuxi cleanup",
     "restore": "npm run clean && rimraf node_modules package-lock.json .nuxt",
-    "prepare": "husky",
+    "prepare": "husky || true",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
