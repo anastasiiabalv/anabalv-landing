@@ -7,8 +7,10 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "clean":"npx nuxi cleanup",
-    "restore": "rimraf node_modules package-lock.json .nuxt && npm run clean"
+    "clean": "npx nuxi cleanup",
+    "restore": "npm run clean && rimraf node_modules package-lock.json .nuxt",
+    "prepare": "husky",
+    "postinstall": "nuxt prepare"
   },
   "dependencies": {
     "@nuxt/fonts": "^0.14.0",
@@ -25,7 +27,6 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-vue": "^10.10.0",
     "globals": "^17.9.0",
-    "husky": "^8.0.0",
     "lint-staged": "^17.3.0",
     "prettier": "^3.9.6",
     "prettier-plugin-tailwindcss": "^0.8.1",
@@ -34,7 +35,7 @@
     "vue-eslint-parser": "^10.4.1"
   },
   "lint-staged": {
-    "**/*.{vue,ts,js,json}": [
+    "**/*.{vue,ts,js}": [
       "eslint --fix --no-error-on-unmatched-pattern",
       "prettier --write"
     ]

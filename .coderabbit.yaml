@@ -9,8 +9,8 @@ reviews:
     - "!test/**/*"
     - "!.nuxt/**/*"       # Exclude Nuxt local development build cache
     - "!.output/**/*"     # Exclude Nitro production build output
-    - "**/node_modules/**"
-    - "**/*.lock"
+    - "!**/node_modules/**"
+    - "!**/*.lock"
 
   # Nuxt-Specific Path Instructions
   path_instructions:
