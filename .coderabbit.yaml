@@ -1,0 +1,27 @@
+# .coderabbit.yaml
+language: "en-US"
+reviews:
+  profile: "chill" # Options: chill, assertive (chill is recommended for creative frontend work)
+  collapse_walkthroughs: false
+  
+  # Prevent CodeRabbit from wasting API calls reviewing build artifacts
+  path_filters:
+    - "!test/**/*"
+    - "!.nuxt/**/*"       # Exclude Nuxt local development build cache
+    - "!.output/**/*"     # Exclude Nitro production build output
+    - "**/node_modules/**"
+    - "**/*.lock"
+
+  # Nuxt-Specific Path Instructions
+  path_instructions:
+    - path: "app/pages/**/*"
+      instructions: "These are Nuxt pages. Ensure they use semantic HTML, NuxtLink for internal routing, and proper useHead/useSeoMeta tags for SEO."
+    
+    - path: "server/**/*"
+      instructions: "These are Nuxt Nitro server routes. Ensure H3 event utilities (like readBody, getQuery) are used correctly. Check for proper error throwing via createError."
+    
+    - path: "app/composables/**/*"
+      instructions: "These are global composables. Ensure they follow Vue 3 Composition API best practices, leverage reactivity properly (ref/computed), and don't introduce memory leaks."
+
+    - path: "**/*.vue"
+      instructions: "Vue components use <script setup> with TypeScript. Keep in mind Nuxt uses auto-imports; do not flag missing import statements for Nuxt core functions, composables, or components unless they are third-party libraries."
