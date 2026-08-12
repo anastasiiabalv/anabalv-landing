@@ -3,4 +3,15 @@
 @theme {
   --font-inter: 'Inter', sans-serif;
   --font-mono: 'Geist Mono', monospace;
+  --color-bronze: #77513D;
+}
+
+@layer base {
+  body {
+    @apply bg-[#15110F] text-[#FFF9F6];
+  }
+}
+
+@utility btn-link {
+  @apply hover:text-bronze transition-colors duration-300 ease-in-out;
 }
