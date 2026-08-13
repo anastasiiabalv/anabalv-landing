@@ -20,9 +20,7 @@
         Hi, I'm Ana — a Ukrainian <b>Full-Stack developer</b> and digital designer based in Poland. I build functional
         web applications from initial design to deployment.
       </p>
-      <NuxtLink to="/about" class="w-fit text-bronze font-semibold underline hover:text-milk trans"
-        >More about me</NuxtLink
-      >
+      <NuxtLink to="/about" class="btn-bronzelink">More about me</NuxtLink>
     </div>
     <div>
       <div class="absolute top-10 right-20 w-50 h-50 bg-linear-0 from-brownblock to-bronze -z-10"></div>
