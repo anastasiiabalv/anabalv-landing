@@ -12,11 +12,7 @@
         Ready to bring your Web product to life or need a technical hand? Don't hesitate to reach out to discuss it
         together!
       </p>
-      <button
-        class="bg-bronze px-7 py-3 text-2xl trans hover:bg-[#928178] hover:shadow-[0_0_10px_rgba(177,155,140,0.5)] mt-10 cursor-pointer active:bg-milk"
-        @click="showcontact = true">
-        Contact me
-      </button>
+      <button class="btn-bronzeblock" @click="showcontact = !showcontact">Contact me</button>
     </div>
   </section>
 </template>

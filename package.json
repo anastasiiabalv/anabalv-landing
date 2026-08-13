@@ -17,7 +17,9 @@
     "@nuxt/fonts": "^0.14.0",
     "@nuxt/image": "^2.1.0",
     "@tailwindcss/vite": "^4.3.3",
+    "@vueuse/core": "^14.4.0",
     "nuxt": "^4.5.2",
+    "resend": "^6.19.0",
     "tailwindcss": "^4.3.3",
     "vue": "^3.5.41",
     "vue-router": "^5.2.0"
