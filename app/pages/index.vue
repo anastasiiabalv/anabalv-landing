@@ -3,6 +3,7 @@
     <HeroSection />
     <ServicesSection />
     <ExperienceSection />
+    <ContactSection />
   </div>
 </template>
 

@@ -17,7 +17,7 @@
     scroll-behavior: smooth;
   }
   h2 {
-    @apply text-4xl font-mono text-center mt-30 mb-10;
+    @apply text-4xl font-mono text-center mt-40 mb-10;
   }
   h3 {
     @apply font-semibold text-2xl;
