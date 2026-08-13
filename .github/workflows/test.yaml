@@ -41,5 +41,5 @@ jobs:
       - name: Run App and Check Hydration
         run: npx playwright test test/e2e/hydration.spec.ts
         env:
-          NUXT_PUBLIC_API_BASE: ${{ secrets.NUXT_PUBLIC_API_BASE }}
-          NUXT_API_SECRET: ${{ secrets.NUXT_API_SECRET }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_MAIL: ${{ secrets.RESEND_MAIL }}
