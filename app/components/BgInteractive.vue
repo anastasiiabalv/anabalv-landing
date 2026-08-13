@@ -5,11 +5,10 @@
         ref="spotlightLayer"
         class="pointer-events-none absolute top-0 left-0 w-full min-h-[200vh] z-0"
         :style="spotlightStyle"></div>
-
-      <div class="relative z-10 flex flex-col min-h-screen">
-        <slot />
-      </div>
     </ClientOnly>
+    <div class="relative z-10 flex flex-col min-h-screen">
+      <slot />
+    </div>
   </div>
 </template>
 
