@@ -12,10 +12,6 @@ jobs:
   test: 
     runs-on: ubuntu-latest
     
-    env:
-      NUXT_PUBLIC_API_BASE: ${{ secrets.NUXT_PUBLIC_API_BASE }}
-      NUXT_API_SECRET: ${{ secrets.NUXT_API_SECRET }}
-      
     steps:
       - uses: actions/checkout@v7
         with:
@@ -35,9 +31,15 @@ jobs:
         
       - name: Build Application
         run: npm run build
+        env:
+          NUXT_PUBLIC_API_BASE: ${{ secrets.NUXT_PUBLIC_API_BASE }}
+          NUXT_API_SECRET: ${{ secrets.NUXT_API_SECRET }}
 
       - name: Install Playwright Browsers
         run: npx playwright install chromium --with-deps
 
       - name: Run App and Check Hydration
         run: npx playwright test test/e2e/hydration.spec.ts
+        env:
+          NUXT_PUBLIC_API_BASE: ${{ secrets.NUXT_PUBLIC_API_BASE }}
+          NUXT_API_SECRET: ${{ secrets.NUXT_API_SECRET }}
