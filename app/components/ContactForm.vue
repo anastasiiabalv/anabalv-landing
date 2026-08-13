@@ -76,11 +76,16 @@ const handleSubmit = async () => {
     })
 
     if (res.success) {
-      name.value = ''
-      email.value = ''
-      message.value = ''
-      showcontact.value = false
-      showalert.value = 'Message sent succesfully.'
+      if (showalert.value) {
+        showalert.value = ''
+      }
+      setTimeout(() => {
+        name.value = ''
+        email.value = ''
+        message.value = ''
+        showcontact.value = false
+        showalert.value = 'Message sent succesfully.'
+      }, 100)
     } else throw new Error('(error) ' + res.data.error)
   } catch (error) {
     console.error('Captured Form Exception:', error)
