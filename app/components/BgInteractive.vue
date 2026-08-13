@@ -1,13 +1,15 @@
 <template>
-  <div class="relative min-h-screen bg-[#0d0908] text-milk selection:bg-bronze/30">
-    <div
-      ref="spotlightLayer"
-      class="pointer-events-none absolute top-0 left-0 w-full h-180 z-0 overflow-hidden"
-      :style="spotlightStyle"></div>
+  <div class="relative text-milk selection:bg-bronze/30">
+    <ClientOnly>
+      <div
+        ref="spotlightLayer"
+        class="pointer-events-none absolute top-0 left-0 w-full min-h-[200vh] z-0"
+        :style="spotlightStyle"></div>
 
-    <div class="relative z-10 flex flex-col min-h-screen">
-      <slot />
-    </div>
+      <div class="relative z-10 flex flex-col min-h-screen">
+        <slot />
+      </div>
+    </ClientOnly>
   </div>
 </template>
 
@@ -16,34 +18,40 @@ import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 const mouseX = ref(0)
 const mouseY = ref(0)
-const isOutsideHero = ref(false)
+const scrollYPosition = ref(0)
 
 const spotlightStyle = computed(() => {
-  if (isOutsideHero.value) {
-    return { background: 'transparent' }
+  const startFade = window.innerHeight * 0.4
+  const endFade = window.innerHeight * 1.1
+
+  let opacity = 1
+  if (scrollYPosition.value > startFade) {
+    opacity = Math.max(0, 1 - (scrollYPosition.value - startFade) / (endFade - startFade))
   }
+
   return {
-    background: `radial-gradient(circle 600px at ${mouseX.value}px ${mouseY.value}px, rgba(177,155,140,0.1), transparent 80%)`
+    background: `radial-gradient(circle 600px at ${mouseX.value}px ${mouseY.value}px, rgba(177,155,140, ${0.1 * opacity}), transparent 80%)`
   }
 })
 
 const handleMouseMove = (event: MouseEvent) => {
-  if (window.scrollY > window.innerHeight) {
-    isOutsideHero.value = true
-    return
-  }
-
-  isOutsideHero.value = false
   mouseX.value = event.clientX
   mouseY.value = event.clientY + window.scrollY
 }
 
+const handleScroll = () => {
+  scrollYPosition.value = window.scrollY
+}
+
 onMounted(() => {
   window.addEventListener('mousemove', handleMouseMove)
+  window.addEventListener('scroll', handleScroll)
+  handleScroll()
 })
 
 onUnmounted(() => {
   window.removeEventListener('mousemove', handleMouseMove)
+  window.removeEventListener('scroll', handleScroll)
 })
 </script>
 
