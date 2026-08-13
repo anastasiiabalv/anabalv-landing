@@ -21,17 +21,17 @@
         <form class="flex flex-col gap-y-4" @submit.prevent="handleSubmit">
           <div class="flex flex-col gap-y-1">
             <label class="font-mono text-xs text-milk/50">Your Name</label>
-            <input v-model.trim="name" type="text" required />
+            <input id="name" v-model.trim="name" type="text" required />
           </div>
 
           <div class="flex flex-col gap-y-1">
             <label class="font-mono text-xs text-milk/50">Email Address</label>
-            <input v-model.trim="email" type="email" required />
+            <input id="email" v-model.trim="email" type="email" required />
           </div>
 
           <div class="flex flex-col gap-y-1">
             <label class="font-mono text-xs text-milk/50">Message</label>
-            <textarea v-model="message" rows="4" required></textarea>
+            <textarea id="msg" v-model="message" rows="4" required></textarea>
           </div>
 
           <button type="submit" class="mt-2 btn-bronzeblock text-xl">Send Message</button>
