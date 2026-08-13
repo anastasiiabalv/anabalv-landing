@@ -20,13 +20,7 @@ export default defineEventHandler(async (event) => {
       from: 'Portfolio Contact <onboarding@resend.dev>',
       to: MAIL || '',
       subject: `New Portfolio Message from ${name}`,
-      html: `
-        <h3>New Contact Form Submission</h3>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Message:</strong></p>
-        <p style="white-space: pre-wrap;">${message}</p>
-      `
+      text: `New Contact Form Submission\n\n` + `Name: ${name}\n` + `Email: ${email}\n\n` + `Message:\n${message}`
     })
     if (data.error && data.error?.statusCode != 200 && data.error?.statusCode != 201)
       return { success: false, data } as Resendcall
