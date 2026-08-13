@@ -15,12 +15,12 @@ const gitignorePath = path.resolve(__dirname, '.gitignore')
 
 export default defineConfig([
   includeIgnoreFile(gitignorePath),
-  {
-    files: ['**/*.{js,mjs,cjs,ts,vue}']
-  },
 
   js.configs.recommended,
-  ...tseslint.configs.recommended,
+  ...tseslint.configs.recommended.map((config) => ({
+    ...config,
+    files: ['**/*.{ts,mts,cts,tsx,vue}']
+  })),
   ...pluginVue.configs['flat/recommended'],
 
   {
