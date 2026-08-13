@@ -15,16 +15,21 @@ const gitignorePath = path.resolve(__dirname, '.gitignore')
 
 export default defineConfig([
   includeIgnoreFile(gitignorePath),
+  {
+    files: ['**/*.{js,mjs,cjs,ts,vue}']
+  },
+
   js.configs.recommended,
   ...tseslint.configs.recommended,
   ...pluginVue.configs['flat/recommended'],
+
   {
     languageOptions: {
       globals: {
         ...globals.browser,
-        ...globals.node,
-      },
-    },
+        ...globals.node
+      }
+    }
   },
   {
     files: ['**/*.vue'],
@@ -33,24 +38,24 @@ export default defineConfig([
       parserOptions: {
         parser: tseslint.parser,
         sourceType: 'module',
-        extraFileExtensions: ['.vue'],
-      },
+        extraFileExtensions: ['.vue']
+      }
     },
     rules: {
-      'no-undef': 'off',
-    },
+      'no-undef': 'off'
+    }
   },
   {
     files: ['**/*.{ts,js}'],
     rules: {
-      'no-undef': 'off',
-    },
+      'no-undef': 'off'
+    }
   },
   {
-    files: ['app/pages/**/*.vue', 'app/layouts/**/*.vue', 'app/{app,error}.vue'],
+    files: ['app/pages/**/*.vue', 'app/layouts/**/*.vue', 'app/app.vue', 'app/error.vue'],
     rules: {
-      'vue/multi-word-component-names': 'off',
-    },
+      'vue/multi-word-component-names': 'off'
+    }
   },
-  eslintConfigPrettier,
+  eslintConfigPrettier
 ])
