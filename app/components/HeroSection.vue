@@ -1,8 +1,10 @@
 <template>
   <section>
     <div class="flex flex-col justify-center gap-y-5 max-w-[37%] mt-20">
-      <h1 class="font-mono text-4xl">Full-Stack</h1>
-      <h1 class="font-mono text-4xl">Web Development</h1>
+      <h1 class="font-mono text-4xl leading-15">
+        Full-Stack <br />
+        Web Development
+      </h1>
       <div class="flex justify-between">
         <NuxtImg
           v-for="val in 6"
