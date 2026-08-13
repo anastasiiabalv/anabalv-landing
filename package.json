@@ -10,10 +10,12 @@
     "clean": "npx nuxi cleanup",
     "restore": "npm run clean && rimraf node_modules package-lock.json .nuxt",
     "prepare": "husky || true",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "test": "vitest"
   },
   "dependencies": {
     "@nuxt/fonts": "^0.14.0",
+    "@nuxt/image": "^2.1.0",
     "@tailwindcss/vite": "^4.3.3",
     "nuxt": "^4.5.2",
     "tailwindcss": "^4.3.3",
@@ -23,15 +25,19 @@
   "devDependencies": {
     "@eslint/compat": "^2.1.0",
     "@eslint/js": "^10.0.1",
+    "@nuxt/test-utils": "^4.1.0",
+    "@vue/test-utils": "^2.4.11",
     "eslint": "^10.8.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-vue": "^10.10.0",
     "globals": "^17.9.0",
+    "happy-dom": "^20.11.2",
     "lint-staged": "^17.3.0",
     "prettier": "^3.9.6",
     "prettier-plugin-tailwindcss": "^0.8.1",
     "rimraf": "^6.1.3",
     "typescript-eslint": "^8.67.0",
+    "vitest": "^4.1.10",
     "vue-eslint-parser": "^10.4.1"
   },
   "lint-staged": {

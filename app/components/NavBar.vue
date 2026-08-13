@@ -1,6 +1,6 @@
 <template>
-  <div class="relative grid grid-cols-12 items-start gap-4 mt-7">
-    <NuxtLink class="col-span-4">
+  <div class="relative grid grid-cols-12 items-start gap-4 pt-7">
+    <NuxtLink class="col-span-4" to="/">
       <span class="text-2xl logo">Ana</span>
       <span class="text-lgs logo">Balieieva</span>
     </NuxtLink>

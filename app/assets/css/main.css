@@ -4,14 +4,20 @@
   --font-inter: 'Inter', sans-serif;
   --font-mono: 'Geist Mono', monospace;
   --color-bronze: #77513D;
+  --color-milk: #FFF9F6;
+  --color-brownblock: #231C19;
 }
 
 @layer base {
   body {
-    @apply bg-[#15110F] text-[#FFF9F6];
+    @apply bg-[#15110F] text-milk font-normal;
   }
 }
 
 @utility btn-link {
   @apply hover:text-bronze transition-colors duration-300 ease-in-out;
+}
+
+@utility trans {
+  @apply  transition-all duration-300 ease-in-out;
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen max-w-7xl mx-auto px-10">
+  <div class="relative min-h-screen max-w-7xl mx-auto px-10">
     <NavBar />
     <main>
       <slot></slot>
