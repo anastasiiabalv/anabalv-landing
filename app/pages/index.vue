@@ -2,7 +2,7 @@
   <div>
     <ContactForm v-if="showcontact" />
     <AlertMsg />
-    <div :class="{ 'pointer-events-none select-none opacity-40 transition-all duration-300': showcontact }">
+    <div :inert="showcontact" :class="{ 'opacity-40 trans': showcontact }">
       <HeroSection />
       <ServicesSection />
       <ExperienceSection />
