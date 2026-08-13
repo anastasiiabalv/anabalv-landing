@@ -14,5 +14,12 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   vite: {
     plugins: [tailwindcss()]
+  },
+  app: {
+    pageTransition: { name: 'page', mode: 'out-in' }
+  },
+  runtimeConfig: {
+    resend_mail: process.env.RESEND_MAIL,
+    resend_api: process.env.RESEND_API_KEY
   }
 })

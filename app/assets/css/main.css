@@ -15,12 +15,25 @@
   }
   html {
     scroll-behavior: smooth;
+    scrollbar-gutter: stable;
   }
   h2 {
-    @apply text-4xl font-mono text-center mt-30 mb-10;
+    @apply text-4xl font-mono text-center mt-40 mb-10;
   }
   h3 {
     @apply font-semibold text-2xl;
+  }
+
+
+  .page-enter-active,
+  .page-leave-active {
+    transition: opacity 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                filter 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .page-enter-from,
+  .page-leave-to {
+    opacity: 0;
+    filter: blur(12px);
   }
 }
 
@@ -30,7 +43,13 @@
 
 @utility btn-bronzelink {
   @apply text-xl text-bronze trans w-fit font-semibold;
-   @apply hover:text-[#928178] hover:bg-brownblock/20 hover:text-shadow-[0_0_10px_rgba(177,155,140,0.5)]
+   @apply hover:text-[#928178] hover:text-shadow-[0_0_10px_rgba(177,155,140,0.5)];
+   @apply active:text-milk;
+}
+
+@utility btn-bronzeblock {
+  @apply bg-bronze px-7 py-3 text-2xl trans font-mono mt-10 cursor-pointer active:bg-milk;
+  @apply hover:bg-[#928178] hover:shadow-[0_0_10px_rgba(177,155,140,0.5)];
 }
 
 @utility trans {
