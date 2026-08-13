@@ -19,7 +19,7 @@
         <h3>FinTech solutions</h3>
         <ul class="list-disc list-inside space-y-2">
           <li>Analytics dashboards,</li>
-          <li>MQL4\5 solutions,</li>
+          <li>MQL4/5 solutions,</li>
           <li>Integration of payment systems (PayU API).</li>
         </ul>
       </div>
@@ -39,7 +39,7 @@
       <!-- devops -->
       <div class="grid grid-cols-3 col-span-3 box">
         <div class="flexb col-span-2">
-          <h3>UI\UX & Motion Design</h3>
+          <h3>UI/UX & Motion Design</h3>
           <p class="max-w-[60%]">
             High-fidelity interactive prototypes, responsive digital interfaces, and cinematic UI animations up to 120
             FPS that elevate conversion rates.
