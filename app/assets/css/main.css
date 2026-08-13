@@ -5,12 +5,19 @@
   --font-mono: 'Geist Mono', monospace;
   --color-bronze: #77513D;
   --color-milk: #FFF9F6;
+  --color-gray: #C5BBB6;
   --color-brownblock: #231C19;
 }
 
 @layer base {
   body {
     @apply bg-[#15110F] text-milk font-normal;
+  }
+  h2{
+    @apply text-4xl font-mono text-center mt-30 mb-10;
+  }
+  h3{
+    @apply font-semibold text-2xl;
   }
 }
 
