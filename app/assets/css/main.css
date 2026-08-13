@@ -3,14 +3,24 @@
 @theme {
   --font-inter: 'Inter', sans-serif;
   --font-mono: 'Geist Mono', monospace;
-  --color-bronze: #77513D;
-  --color-milk: #FFF9F6;
-  --color-brownblock: #231C19;
+  --color-bronze: #77513d;
+  --color-milk: #fff9f6;
+  --color-gray: #c5bbb6;
+  --color-brownblock: #231c19;
 }
 
 @layer base {
   body {
     @apply bg-[#15110F] text-milk font-normal;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  h2 {
+    @apply text-4xl font-mono text-center mt-30 mb-10;
+  }
+  h3 {
+    @apply font-semibold text-2xl;
   }
 }
 
@@ -19,5 +29,5 @@
 }
 
 @utility trans {
-  @apply  transition-all duration-300 ease-in-out;
+  @apply transition-all duration-300 ease-in-out;
 }
