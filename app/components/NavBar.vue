@@ -6,7 +6,7 @@
     </NuxtLink>
     <div class="col-span-5 flex justify-between">
       <NuxtLink to="#services" class="btn-link">services</NuxtLink>
-      <NuxtLink to="/projects" class="btn-link">projects</NuxtLink>
+      <NuxtLink to="#experiece" class="btn-link">experience</NuxtLink>
       <NuxtLink to="/about" class="btn-link">about</NuxtLink>
       <NuxtLink to="/contact" class="btn-link">contact</NuxtLink>
     </div>

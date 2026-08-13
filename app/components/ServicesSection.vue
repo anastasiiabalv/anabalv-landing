@@ -4,7 +4,7 @@
     <div class="grid grid-cols-5 gap-10 mb-10">
       <!-- fullstack -->
       <div class="grid grid-cols-3 col-span-3 box">
-        <div class="flexb col-span-2">
+        <div class="flexcol col-span-2">
           <h3>Full-stack engineering</h3>
           <p class="max-w-[60%]">
             End-to-end development using <b>scalable JS frameworks</b>. Robust architecture, <b>API integrations</b>,
@@ -15,7 +15,7 @@
         <div>*VIDEO*</div>
       </div>
       <!-- fintech -->
-      <div class="box col-span-2 flexb">
+      <div class="box col-span-2 flexcol">
         <h3>FinTech solutions</h3>
         <ul class="list-disc list-inside space-y-2">
           <li>Analytics dashboards,</li>
@@ -27,7 +27,7 @@
 
     <div class="grid grid-cols-5 gap-10">
       <!-- design -->
-      <div class="box col-span-2 flexb">
+      <div class="box col-span-2 flexcol">
         <h3>DevOps</h3>
         <ul class="list-disc list-inside space-y-2">
           <li>VPS / VDS configuration</li>
@@ -38,7 +38,7 @@
       </div>
       <!-- devops -->
       <div class="grid grid-cols-3 col-span-3 box">
-        <div class="flexb col-span-2">
+        <div class="flexcol col-span-2">
           <h3>UI/UX & Motion Design</h3>
           <p class="max-w-[60%]">
             High-fidelity interactive prototypes, responsive digital interfaces, and cinematic UI animations up to 120
@@ -59,12 +59,5 @@
 
 .box {
   @apply bg-brownblock p-10 box-border;
-}
-.flexb {
-  @apply flex flex-col gap-y-5;
-}
-.flexb p,
-.flexb li {
-  @apply text-gray;
 }
 </style>
