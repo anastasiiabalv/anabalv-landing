@@ -1,7 +1,7 @@
 <template>
   <div>
     <ContactForm v-if="showcontact" />
-    <AlertMsg v-if="showalert" />
+    <AlertMsg />
     <div :class="{ 'pointer-events-none select-none opacity-40 transition-all duration-300': showcontact }">
       <HeroSection />
       <ServicesSection />
@@ -13,7 +13,6 @@
 
 <script lang="ts" setup>
 const showcontact = useState<boolean>('showcontact', () => false)
-const showalert = useState<string>('showalert')
 
 const router = useRouter()
 onMounted(() => {
