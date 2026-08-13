@@ -1,5 +1,10 @@
 <template>
-  <div :key="showalert" class="fixed left-5 bottom-5 bg-bronze px-7 py-3 z-30 animate-fade-alert max-w-[50%]">
+  <div
+    :key="showalert"
+    role="status"
+    aria-live="polite"
+    aria-atomic="true"
+    class="fixed left-5 bottom-5 bg-bronze px-7 py-3 z-30 animate-fade-alert max-w-[50%]">
     {{ showalert }}
   </div>
 </template>
