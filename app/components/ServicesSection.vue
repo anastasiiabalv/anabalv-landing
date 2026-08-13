@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section id="services">
     <h2>Services</h2>
     <div class="grid grid-cols-5 gap-10 mb-10">
       <!-- fullstack -->
