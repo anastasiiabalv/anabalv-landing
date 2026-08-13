@@ -11,6 +11,8 @@
           :key="val"
           :src="`hero/icon_${val}.svg`"
           draggable="false"
+          alt=""
+          aria-hidden="true"
           class="h-7 hover:scale-105 trans" />
       </div>
       <hr class="border-bronze" />
