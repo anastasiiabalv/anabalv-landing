@@ -29,7 +29,7 @@
       <div>*VIDEO*</div>
     </div>
 
-    <hr class="border-[#5A514D] my-10" />
+    <hr class="border-[#453d39] my-10" />
 
     <!-- design -->
     <div class="grid">

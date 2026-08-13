@@ -38,7 +38,7 @@
 }
 
 @utility btn-link {
-  @apply hover:text-bronze trans hover:text-shadow-[0_0_10px_rgba(177,155,140,0.5)];
+  @apply hover:text-gray trans hover:text-shadow-[0_0_10px_rgba(177,155,140,0.5)];
 }
 
 @utility btn-bronzelink {
