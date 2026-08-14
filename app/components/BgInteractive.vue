@@ -3,7 +3,7 @@
     <ClientOnly>
       <div
         ref="spotlightLayer"
-        class="pointer-events-none absolute top-0 left-0 w-full min-h-[200vh] z-0"
+        class="pointer-events-none absolute top-0 left-0 w-full min-h-[max(100%,100vh)] z-0"
         :style="spotlightStyle"></div>
     </ClientOnly>
     <div class="relative z-10 flex flex-col min-h-screen">

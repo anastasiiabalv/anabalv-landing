@@ -1,6 +1,5 @@
 <template>
   <div>
-    <ContactForm v-if="showcontact" />
     <AlertMsg />
     <div :inert="showcontact" :class="{ 'opacity-40 trans': showcontact }">
       <HeroSection />

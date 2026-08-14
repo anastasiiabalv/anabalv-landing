@@ -1,5 +1,6 @@
 <template>
   <div
+    v-if="showalert"
     :key="showalert"
     role="status"
     aria-live="polite"
