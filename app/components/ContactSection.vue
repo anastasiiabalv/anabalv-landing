@@ -1,5 +1,5 @@
 <template>
-  <section class="relative min-h-150 w-full flexbox mt-30">
+  <section id="contact" class="relative min-h-150 w-full flexbox mt-30">
     <div class="absolute inset-0 pointer-events-none select-none">
       <div class="top-10 -left-10 w-60 h-60 bgbox"></div>
       <div class="top-[40%] left-[32%] w-30 h-30 opacity-70 bgbox"></div>

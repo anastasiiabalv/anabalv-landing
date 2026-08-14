@@ -1,19 +1,20 @@
 <template>
-  <section id="services" class="pt-35">
+  <section id="services" class="translate-y-15">
     <h2>Services</h2>
     <div class="grid grid-cols-5 gap-10 mb-10">
       <!-- fullstack -->
-      <div class="grid grid-cols-3 col-span-3 box">
-        <div class="flexcol col-span-2">
+      <div class="grid grid-cols-5 col-span-3 box items-center">
+        <div class="flexcol col-span-3">
           <h3>Full-stack engineering</h3>
-          <p class="max-w-[60%]">
+          <p class="mr-10">
             End-to-end development using <b>scalable JS frameworks</b>. Robust architecture, <b>API integrations</b>,
             and secure <b>database management</b> tailored for business logic.
           </p>
           <p class="text-xs"><b>Frameworks:</b> Nuxt, NestJS, Vue.js <br /><b>Databases:</b> MongoDB, MySQL</p>
         </div>
-        <div>*VIDEO*</div>
+        <NuxtImg src="fullstack_schema.svg" class="col-span-2 w-full h-auto object-contain" />
       </div>
+
       <!-- fintech -->
       <div class="box col-span-2 flexcol">
         <h3>FinTech solutions</h3>
@@ -37,16 +38,16 @@
         </ul>
       </div>
       <!-- devops -->
-      <div class="grid grid-cols-3 col-span-3 box">
-        <div class="flexcol col-span-2">
+      <div class="grid grid-cols-5 col-span-3 box items-center">
+        <div class="flexcol col-span-3">
           <h3>UI/UX & Motion Design</h3>
-          <p class="max-w-[60%]">
+          <p class="mr-10">
             High-fidelity interactive prototypes, responsive digital interfaces, and cinematic UI animations up to 120
             FPS that elevate conversion rates.
           </p>
           <p class="text-xs"><b>Apps: </b> After Effects, Photoshop, Figma, Canva, Illustrator</p>
         </div>
-        <div>*VIDEO*</div>
+        <NuxtImg src="design_schema.svg" class="col-span-2 w-full h-auto object-contain" />
       </div>
     </div>
   </section>
