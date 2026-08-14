@@ -1,8 +1,8 @@
 <template>
-  <section id="experience">
+  <section id="experience" class="translate-y-20">
     <h2>Experience</h2>
     <!-- fxats -->
-    <div class="grid">
+    <div class="section-grid">
       <div class="flexcol">
         <div class="flex gap-10">
           <NuxtImg src="logo-fxats.svg" alt="FX-ATS logo" class="w-20 rounded-xl border border-bronze" />
@@ -12,27 +12,25 @@
           </div>
         </div>
         <p>
-          Engineered the <b>entire application architecture</b> single-handedly, managed deployments, optimized data
-          delivery, and designed web pages.
+          Engineered the <b>entire FinTech application architecture</b> single-handedly, managed deployments, optimized
+          data delivery, and designed web pages.
         </p>
         <div class="flex gap-10">
           <div class="infobox">
             <p class="text-3xl text-milk!">2 years</p>
             <p class="">working</p>
           </div>
-          <NuxtLink to="https://github.com/FX-ATS-Dev" class="btn-bronzelink flexbox"
-            >See structure & <br />
-            technologies used
-          </NuxtLink>
         </div>
       </div>
-      <div>*VIDEO*</div>
+      <div class="grid grid-cols-2 gap-1 h-full content-stretch">
+        <NuxtImg v-for="ind in 4" :key="ind" :src="`/examples/fx_${ind}.png`" class="w-full h-full object-cover" />
+      </div>
     </div>
 
     <hr class="border-[#453d39] my-10" />
 
     <!-- design -->
-    <div class="grid">
+    <div class="section-grid">
       <div class="flexcol">
         <h3>Digital & motion design</h3>
         <p class="">Started as a hobby, it later became an integral part of my web development workflow.</p>
@@ -47,7 +45,7 @@
           </div>
         </div>
       </div>
-      <div>*VIDEO*</div>
+      <NuxtImg src="examples/cloud_preview.png" class="border-2 border-bronze w-full h-full object-cover"></NuxtImg>
     </div>
   </section>
 </template>
@@ -62,7 +60,7 @@
   @apply trans hover:border-bronze/30 hover:shadow-[0_0_30px_rgba(177,155,140,0.15)];
 }
 
-.grid {
-  @apply grid grid-cols-2 gap-20;
+.section-grid {
+  @apply grid grid-cols-2 gap-20 items-center;
 }
 </style>

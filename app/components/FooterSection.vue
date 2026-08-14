@@ -6,7 +6,7 @@
         <div class="*:text-gray grid grid-cols-3 gap-10">
           <div>
             <h4>About</h4>
-            <NuxtLink class="link" to="/about">About me</NuxtLink>
+            <!-- <NuxtLink class="link" to="/about">About me</NuxtLink> -->
             <NuxtLink class="link" to="/#experience">Experience</NuxtLink>
           </div>
           <div>
@@ -16,8 +16,8 @@
           </div>
           <div>
             <h4>Contact</h4>
-            <NuxtLink class="link" to="/contact">Contact details</NuxtLink>
-            <button class="link" @click="showcontact = true">Write me</button>
+            <!-- <NuxtLink class="link" to="/contact">Contact details</NuxtLink> -->
+            <button class="link" @click="showcontact = true">Contact me</button>
           </div>
         </div>
         <div>
