@@ -4,7 +4,7 @@
       <span class="text-2xl logo">Ana</span>
       <span class="text-lgs logo">Balieieva</span>
     </NuxtLink>
-    <div class="col-span-5 flex justify-between">
+    <div class="col-span-5 flex justify-between gap-3">
       <NuxtLink to="/#services" class="btn-link">services</NuxtLink>
       <NuxtLink to="/#experience" class="btn-link">experience</NuxtLink>
       <!-- <NuxtLink to="/about" class="btn-link">about</NuxtLink> -->
