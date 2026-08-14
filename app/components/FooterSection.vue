@@ -27,25 +27,25 @@
           <div class="grid grid-cols-2 gap-x-5 gap-y-3 mt-4 max-w-xs mx-auto lg:mx-0">
             <NuxtLink
               class="flex! gap-2 link items-center justify-center lg:justify-start text-gray"
-              to="https://linkedin.com"
+              to="https://www.linkedin.com/in/anastasiia-balieieva-33714936a/"
               target="_blank">
               <NuxtImg src="footer/linkedin.svg" alt="LinkedIn" class="img" /><span>LinkedIn</span>
             </NuxtLink>
             <NuxtLink
               class="flex! gap-2 link items-center justify-center lg:justify-start text-gray"
-              to="https://x.com"
+              to="https://x.com/anastasiiabalv"
               target="_blank">
               <NuxtImg src="footer/x.svg" alt="LinkedIn" class="img" /><span>Twitter</span>
             </NuxtLink>
             <NuxtLink
               class="flex! gap-2 link items-center justify-center lg:justify-start text-gray"
-              to="https://github.com"
+              to="https://github.com/anastasiiabalv"
               target="_blank">
               <NuxtImg src="footer/github.svg" alt="LinkedIn" class="img" /><span>GitHub</span>
             </NuxtLink>
             <NuxtLink
               class="flex! gap-2 link items-center justify-center lg:justify-start text-gray"
-              to="https://bsky.app"
+              to="https://bsky.app/profile/anastasiiabalv.bsky.social"
               target="_blank">
               <NuxtImg src="footer/bluesky.svg" alt="LinkedIn" class="img" /><span>BlueSky</span>
             </NuxtLink>
