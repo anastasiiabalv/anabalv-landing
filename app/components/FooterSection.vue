@@ -23,16 +23,27 @@
         <div>
           <h4>Find me on:</h4>
           <div class="grid grid-cols-2 gap-5 mt-5">
-            <div class="flex gap-2">
+            <NuxtLink
+              class="flex! gap-2 link items-center text-gray"
+              to="https://www.linkedin.com/in/anastasiia-balieieva-33714936a/"
+              target="_blank">
               <NuxtImg src="footer/linkedin.svg" alt="LinkedIn" class="img" /><span>LinkedIn</span>
-            </div>
-            <div class="flex gap-2"><NuxtImg src="footer/x.svg" alt="LinkedIn" class="img" /><span>Twitter</span></div>
-            <div class="flex gap-2">
+            </NuxtLink>
+            <NuxtLink class="flex! gap-2 link items-center text-gray" to="https://x.com/anastasiiabalv" target="_blank">
+              <NuxtImg src="footer/x.svg" alt="LinkedIn" class="img" /><span>Twitter</span>
+            </NuxtLink>
+            <NuxtLink
+              class="flex! gap-2 link items-center text-gray"
+              to="https://github.com/anastasiiabalv"
+              target="_blank">
               <NuxtImg src="footer/github.svg" alt="LinkedIn" class="img" /><span>GitHub</span>
-            </div>
-            <div class="flex gap-2">
+            </NuxtLink>
+            <NuxtLink
+              class="flex! gap-2 link items-center text-gray"
+              to="https://bsky.app/profile/anastasiiabalv.bsky.social"
+              target="_blank">
               <NuxtImg src="footer/bluesky.svg" alt="LinkedIn" class="img" /><span>BlueSky</span>
-            </div>
+            </NuxtLink>
           </div>
         </div>
       </div>
