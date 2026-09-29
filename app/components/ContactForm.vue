@@ -2,14 +2,14 @@
   <Transition name="fade">
     <div
       v-if="showcontact"
-      class="fixed inset-0 z-30 flex items-center justify-center p-4 bg-black/20 backdrop-blur-xs"
+      class="fixed inset-0 z-30 flex items-center justify-center bg-black/20 p-4 backdrop-blur-xs"
       @mousedown="onMousedown"
       @mouseup="onMouseup">
-      <div class="relative w-full max-w-lg bg-ink-950 border border-bronze/50 p-10 shadow-2xl flex flex-col gap-y-10">
+      <div class="relative flex w-full max-w-lg flex-col gap-y-10 border border-bronze/50 bg-ink-950 p-10 shadow-2xl">
         <button
           type="button"
           aria-label="Close"
-          class="absolute top-4 right-4 text-bronze-400 hover:text-milk cursor-pointer trans text-xl"
+          class="trans absolute top-4 right-4 cursor-pointer text-xl text-bronze-400 hover:text-milk"
           @click="showcontact = false">
           ✕
         </button>
@@ -19,26 +19,7 @@
           <p class="text-center text-bronze-400">Drop me a message and I'll get back to you shortly.</p>
         </div>
 
-        <form class="flex flex-col gap-y-4" @submit.prevent="handleSubmit">
-          <div class="flex flex-col gap-y-1">
-            <label class="font-mono text-xs text-milk/50">Your Name</label>
-            <input id="name" v-model.trim="name" type="text" required />
-          </div>
-
-          <div class="flex flex-col gap-y-1">
-            <label class="font-mono text-xs text-milk/50">Email Address</label>
-            <input id="email" v-model.trim="email" type="email" required />
-          </div>
-
-          <div class="flex flex-col gap-y-1">
-            <label class="font-mono text-xs text-milk/50">Message</label>
-            <textarea id="msg" v-model="message" rows="4" required></textarea>
-          </div>
-
-          <button type="submit" class="btn-primary mt-2" :disabled="isSending">
-            {{ isSending ? 'Sending…' : 'Send Message' }}
-          </button>
-        </form>
+        <ContactFormFields @sent="showcontact = false" />
       </div>
     </div>
   </Transition>
@@ -46,12 +27,7 @@
 
 <script lang="ts" setup>
 import { ref, computed } from 'vue'
-const name = ref('')
-const email = ref('')
-const message = ref('')
-const isSending = ref(false)
 const showcontact = useState<boolean>('showcontact')
-const showalert = useState<string>('showalert', () => '')
 const isMaskClick = ref(false)
 
 const onMousedown = (event: MouseEvent) => {
@@ -64,63 +40,9 @@ const onMouseup = (event: MouseEvent) => {
   }
 }
 
-const handleSubmit = async () => {
-  if (isSending.value) return
-  isSending.value = true
-
-  try {
-    const res = await $fetch<ResendCall>('/api/contact', {
-      method: 'POST',
-      body: {
-        name: name.value,
-        email: email.value,
-        message: message.value
-      }
-    })
-
-    if (res.success) {
-      if (showalert.value) {
-        showalert.value = ''
-      }
-      setTimeout(() => {
-        name.value = ''
-        email.value = ''
-        message.value = ''
-        showcontact.value = false
-        showalert.value = 'Message sent succesfully.'
-      }, 100)
-    } else throw new Error('(error) ' + res.data.error)
-  } catch (error) {
-    console.error('Captured Form Exception:', error)
-    showalert.value =
-      error instanceof Error ? 'Unexpected error occured: ' + error.message : 'An unexpected error occurred.'
-  } finally {
-    isSending.value = false
-  }
-}
 useHead({
   bodyAttrs: {
     class: computed(() => (showcontact.value ? 'overflow-hidden touch-none' : ''))
   }
 })
 </script>
-
-<style>
-@reference '@/assets/css/main.css';
-
-input,
-textarea {
-  @apply w-full bg-ink-800 border border-bronze/10 text-milk px-4 py-2.5 text-sm resize-none outline-none;
-  @apply trans focus:border-bronze;
-}
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0px 1000px #1c1412 inset !important;
-  outline: none !important;
-  border-color: #15110e !important;
-  -webkit-text-fill-color: #f7f4f0 !important;
-}
-</style>

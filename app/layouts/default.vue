@@ -4,6 +4,7 @@
       <div class="mx-auto w-full max-w-7xl grow px-[clamp(20px,5vw,40px)]">
         <NavBar />
         <ContactForm v-if="showcontact" />
+        <AlertMsg />
         <main>
           <slot></slot>
         </main>

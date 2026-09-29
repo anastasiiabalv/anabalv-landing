@@ -19,10 +19,7 @@
       </div>
     </div>
     <div class="mt-10 flex flex-wrap gap-x-8 gap-y-3 font-mono text-[15px]">
-      <NuxtLink
-        to="https://github.com/anastasiiabalv"
-        target="_blank"
-        class="link-accent inline-flex min-h-11 items-center gap-2.5">
+      <NuxtLink :to="githubUrl" target="_blank" class="link-accent inline-flex min-h-11 items-center gap-2.5">
         <NuxtImg src="footer/github.svg" alt="" class="h-5 w-5" />GitHub ↗
       </NuxtLink>
       <NuxtLink v-if="upworkUrl" :to="upworkUrl" target="_blank" class="link-accent inline-flex min-h-11 items-center">
@@ -32,7 +29,4 @@
   </section>
 </template>
 
-<script lang="ts" setup>
-// TODO: put the Upwork profile URL here to show the link
-const upworkUrl = ''
-</script>
+<script lang="ts" setup></script>

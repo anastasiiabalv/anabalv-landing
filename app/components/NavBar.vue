@@ -5,7 +5,8 @@
       <NuxtLink to="/#work" class="link-muted">Work</NuxtLink>
       <NuxtLink to="/#services" class="link-muted">Services</NuxtLink>
       <NuxtLink to="/#process" class="link-muted">Process</NuxtLink>
-      <NuxtLink to="/#contact" class="link-muted">Contact</NuxtLink>
+      <NuxtLink to="/about" class="link-muted">About</NuxtLink>
+      <NuxtLink to="/contact" class="link-muted">Contact</NuxtLink>
     </nav>
   </header>
 </template>

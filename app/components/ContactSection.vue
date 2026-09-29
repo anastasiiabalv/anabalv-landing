@@ -13,9 +13,10 @@
         Tell me what you trade and what you need built.
       </h2>
       <div class="flex flex-wrap items-center justify-center gap-x-7 gap-y-4">
-        <button type="button" class="btn-primary" @click="showcontact = true">Start a project</button>
+        <NuxtLink v-if="to" :to="to" class="btn-primary">Start a project</NuxtLink>
+        <button v-else type="button" class="btn-primary" @click="showcontact = true">Start a project</button>
         <NuxtLink
-          to="https://www.linkedin.com/in/anastasiia-balieieva-33714936a/"
+          :to="linkedinUrl"
           target="_blank"
           class="trans border-b border-bronze/50 pb-0.5 font-mono text-base text-milk hover:text-bronze-400">
           Message me on LinkedIn
@@ -27,6 +28,9 @@
 </template>
 
 <script lang="ts" setup>
+// with `to` the button links to a page instead of opening the contact modal
+defineProps<{ to?: string }>()
+
 const showcontact = useState<boolean>('showcontact', () => false)
 </script>
 

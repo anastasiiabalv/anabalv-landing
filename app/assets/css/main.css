@@ -84,6 +84,14 @@
 }
 
 /* sections */
+@utility hero-title {
+  @apply m-0 font-mono text-[clamp(38px,6vw,64px)] leading-[1.08] font-normal tracking-[-.02em] text-balance;
+}
+
+@utility hero-sub {
+  @apply m-0 max-w-[34em] text-[clamp(17px,1.6vw,19px)] leading-[1.6] text-pretty text-gray;
+}
+
 @utility section-pad {
   @apply pt-[clamp(112px,14vw,160px)];
 }

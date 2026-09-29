@@ -1,6 +1,5 @@
 <template>
   <div>
-    <AlertMsg />
     <div :inert="showcontact" :class="{ 'opacity-40 trans': showcontact }">
       <HeroSection />
       <ProblemsSection />
