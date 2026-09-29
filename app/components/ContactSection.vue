@@ -1,20 +1,27 @@
 <template>
-  <section id="contact" class="relative min-h-100 md:min-h-150 w-full flexbox mt-30 px-4 md:px-0">
-    <div class="absolute inset-0 pointer-events-none select-none overflow-hidden">
-      <div class="top-10 -left-10 w-40 md:w-60 h-40 md:h-60 bgbox"></div>
-      <div class="top-[40%] left-[10%] md:left-[32%] w-24 md:w-30 h-24 md:h-30 opacity-70 bgbox"></div>
-      <div class="top-20 right-[5%] md:right-[20%] w-36 md:w-45 h-36 md:h-45 bgbox"></div>
-      <div class="bottom-5 right-[-5%] md:right-[5%] w-36 md:w-48 h-36 md:h-48 bgbox"></div>
+  <section id="contact" class="relative overflow-hidden py-[clamp(120px,16vw,200px)]">
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0 select-none">
+      <div class="bgbox top-[8%] left-[2%] h-[clamp(110px,16vw,176px)] w-[clamp(90px,15vw,166px)]"></div>
+      <div class="bgbox top-[14%] left-[58%] h-[clamp(90px,13vw,150px)] w-[clamp(80px,13vw,150px)]"></div>
+      <div class="bgbox top-[44%] left-[30%] h-[clamp(60px,8vw,90px)] w-[clamp(60px,9vw,100px)]"></div>
+      <div class="bgbox right-[10%] bottom-[10%] h-[clamp(100px,14vw,150px)] w-[clamp(90px,14vw,160px)]"></div>
     </div>
 
-    <div class="relative z-10 max-w-lg text-milk text-center">
-      <p class="text-xl md:text-2xl leading-relaxed">
-        Ready to bring your Web product to life or need a technical hand? Don't hesitate to reach out to discuss it
-        together!
-      </p>
-      <button class="btn-bronzeblock mt-6 md:mt-8 w-full sm:w-auto" @click="showcontact = !showcontact">
-        Contact me
-      </button>
+    <div class="relative mx-auto flex max-w-160 flex-col items-center gap-7 text-center">
+      <p class="eyebrow">Contact</p>
+      <h2 class="m-0 max-w-[14em] font-mono text-[clamp(32px,5vw,56px)] leading-[1.12] font-normal text-balance">
+        Tell me what you trade and what you need built.
+      </h2>
+      <div class="flex flex-wrap items-center justify-center gap-x-7 gap-y-4">
+        <button type="button" class="btn-primary" @click="showcontact = true">Start a project</button>
+        <NuxtLink
+          to="https://www.linkedin.com/in/anastasiia-balieieva-33714936a/"
+          target="_blank"
+          class="trans border-b border-bronze/50 pb-0.5 font-mono text-base text-milk hover:text-bronze-400">
+          Message me on LinkedIn
+        </NuxtLink>
+      </div>
+      <p class="m-0 text-[15px] text-ink-400">Usually replies within a day</p>
     </div>
   </section>
 </template>
@@ -27,6 +34,6 @@ const showcontact = useState<boolean>('showcontact', () => false)
 @reference '@/assets/css/main.css';
 
 .bgbox {
-  @apply -z-10 bg-linear-180 from-brownblock to-transparent absolute;
+  @apply absolute bg-linear-180 from-[rgba(255,240,225,.035)] to-transparent;
 }
 </style>

@@ -1,70 +1,48 @@
 <template>
-  <section id="services" class="translate-y-15">
-    <h2 class="text-center md:text-left">Services</h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-10 mb-6 md:mb-10">
-      <!-- fullstack -->
-      <div class="grid grid-cols-1 sm:grid-cols-5 md:col-span-3 box items-center gap-6 sm:gap-0">
-        <div class="flexcol sm:col-span-3">
-          <h3>Full-stack engineering</h3>
-          <p class="mr-0 sm:mr-10">
-            End-to-end development using <b>scalable JS frameworks</b>. Robust architecture, <b>API integrations</b>,
-            and secure <b>database management</b> tailored for business logic.
-          </p>
-          <p class="text-xs"><b>Frameworks:</b> Nuxt, NestJS, Vue.js <br /><b>Databases:</b> MongoDB, MySQL</p>
-        </div>
-        <NuxtImg
-          src="fullstack_schema.svg"
-          class="sm:col-span-2 w-full h-auto object-contain max-w-[200px] sm:max-w-full mx-auto sm:mx-0" />
-      </div>
-
-      <!-- fintech -->
-      <div class="box md:col-span-2 flexcol">
-        <h3>FinTech solutions</h3>
-        <ul class="list-disc list-inside space-y-2">
-          <li>Analytics dashboards,</li>
-          <li>MQL4/5 solutions,</li>
-          <li>Integration of payment systems (PayU API).</li>
+  <section id="services" class="section-pad">
+    <p class="eyebrow mb-4">Services</p>
+    <h2 class="section-title mb-12">What you can hire me for</h2>
+    <div class="grid grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] gap-5">
+      <div v-for="service in services" :key="service.title" class="card">
+        <h3 class="m-0 text-xl leading-[1.4] font-semibold">{{ service.title }}</h3>
+        <ul class="bullet-list text-[15px]">
+          <li v-for="item in service.items" :key="item">{{ item }}</li>
         </ul>
       </div>
     </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-10">
-      <!-- devops (changed order on mobile to match layout flow) -->
-      <div class="box md:col-span-2 flexcol order-2 md:order-none">
-        <h3>DevOps</h3>
-        <ul class="list-disc list-inside space-y-2">
-          <li>VPS / VDS configuration</li>
-          <li>Domain setup & SSL encryption</li>
-          <li>Git-based automated deployment</li>
-          <li>Live project support</li>
-        </ul>
-      </div>
-
-      <!-- design -->
-      <div class="grid grid-cols-1 sm:grid-cols-5 md:col-span-3 box items-center gap-6 sm:gap-0 order-1 md:order-none">
-        <div class="flexcol sm:col-span-3">
-          <h3>UI/UX & Motion Design</h3>
-          <p class="mr-0 sm:mr-10">
-            High-fidelity interactive prototypes, responsive digital interfaces, and cinematic UI animations up to 120
-            FPS that elevate conversion rates.
-          </p>
-          <p class="text-xs"><b>Apps: </b> After Effects, Photoshop, Figma, Canva, Illustrator</p>
-        </div>
-        <NuxtImg
-          src="design_schema.svg"
-          class="sm:col-span-2 w-full h-auto object-contain max-w-[200px] sm:max-w-full mx-auto sm:mx-0" />
-      </div>
-    </div>
+    <p class="mt-7 mb-0 font-mono text-sm text-gray">Typical project: 2–6 weeks</p>
   </section>
 </template>
 
-<script lang="ts" setup></script>
-
-<style scoped>
-@reference '@/assets/css/main.css';
-
-.box {
-  @apply bg-brownblock p-6 md:p-10 box-border;
-}
-</style>
+<script lang="ts" setup>
+const services = [
+  {
+    title: 'FinTech dashboards',
+    items: [
+      'Live account and strategy analytics',
+      'Investor-facing performance pages',
+      'Payment integrations (PayU API)'
+    ]
+  },
+  {
+    title: 'MetaTrader systems',
+    items: [
+      'Expert Advisors and indicators in MQL4/5',
+      'Trade copiers between accounts and brokers',
+      'Fixes for EAs that fail on live accounts'
+    ]
+  },
+  {
+    title: 'Full-stack web apps',
+    items: ['Nuxt / Vue front ends', 'NestJS APIs and MongoDB data models', 'Product UI and interface design']
+  },
+  {
+    title: 'DevOps and support',
+    items: [
+      'VPS setup for web apps and terminals',
+      'Domains, SSL and Git-based deployment',
+      'Ongoing support after launch'
+    ]
+  }
+]
+</script>

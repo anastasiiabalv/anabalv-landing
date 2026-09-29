@@ -5,17 +5,18 @@
       class="fixed inset-0 z-30 flex items-center justify-center p-4 bg-black/20 backdrop-blur-xs"
       @mousedown="onMousedown"
       @mouseup="onMouseup">
-      <div class="relative w-full max-w-lg bg-[#0d0908] border border-bronze/50 p-10 shadow-2xl flex flex-col gap-y-10">
+      <div class="relative w-full max-w-lg bg-ink-950 border border-bronze/50 p-10 shadow-2xl flex flex-col gap-y-10">
         <button
           type="button"
-          class="absolute top-4 right-4 text-bronze hover:text-milk cursor-pointer trans text-xl"
+          aria-label="Close"
+          class="absolute top-4 right-4 text-bronze-400 hover:text-milk cursor-pointer trans text-xl"
           @click="showcontact = false">
           ✕
         </button>
 
         <div class="space-y-1">
-          <h2 class="text-2xl!">Let's connect</h2>
-          <p class="text-center text-bronze">Drop me a message and I'll get back to you shortly.</p>
+          <h2 class="m-0 text-center font-mono text-2xl font-normal">Let's connect</h2>
+          <p class="text-center text-bronze-400">Drop me a message and I'll get back to you shortly.</p>
         </div>
 
         <form class="flex flex-col gap-y-4" @submit.prevent="handleSubmit">
@@ -34,7 +35,9 @@
             <textarea id="msg" v-model="message" rows="4" required></textarea>
           </div>
 
-          <button type="submit" class="mt-2 btn-bronzeblock text-xl">Send Message</button>
+          <button type="submit" class="btn-primary mt-2" :disabled="isSending">
+            {{ isSending ? 'Sending…' : 'Send Message' }}
+          </button>
         </form>
       </div>
     </div>
@@ -107,7 +110,7 @@ useHead({
 
 input,
 textarea {
-  @apply w-full bg-brownblock border border-bronze/10 px-4 py-2.5 text-sm resize-none outline-none;
+  @apply w-full bg-ink-800 border border-bronze/10 text-milk px-4 py-2.5 text-sm resize-none outline-none;
   @apply trans focus:border-bronze;
 }
 

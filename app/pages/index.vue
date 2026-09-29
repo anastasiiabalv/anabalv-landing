@@ -3,8 +3,11 @@
     <AlertMsg />
     <div :inert="showcontact" :class="{ 'opacity-40 trans': showcontact }">
       <HeroSection />
+      <ProblemsSection />
+      <WorkSection />
       <ServicesSection />
-      <ExperienceSection />
+      <ProcessSection />
+      <ProofSection />
     </div>
     <ContactSection />
   </div>

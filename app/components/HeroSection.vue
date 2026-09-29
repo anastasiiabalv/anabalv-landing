@@ -1,37 +1,34 @@
 <template>
-  <section
-    class="relative flex flex-col md:flex-row justify-between items-center md:items-start w-full gap-y-10 md:gap-y-0">
-    <div class="flex flex-col justify-center gap-y-5 w-full max-w-full md:max-w-[37%] mt-30 order-2 md:order-1">
-      <h1 class="font-mono text-4xl md:text-5xl leading-tight md:leading-20 text-center md:text-left">
-        Full-Stack <br class="hidden md:inline" />
-        Web Development
+  <section id="top" class="flex flex-wrap items-center gap-x-16 gap-y-14 pt-[clamp(48px,8vw,96px)]">
+    <div class="flex min-w-0 flex-[1_1_440px] flex-col gap-7">
+      <h1 class="m-0 font-mono text-[clamp(38px,6vw,64px)] leading-[1.08] font-normal tracking-[-.02em] text-balance">
+        Built by a trader. <span class="text-bronze-400">Tested on real money.</span>
       </h1>
-      <div class="flex justify-center md:justify-between gap-x-4 md:gap-x-0 overflow-x-auto py-2">
-        <NuxtImg
-          v-for="val in 6"
-          :key="val"
-          :src="`hero/icon_${val}.svg`"
-          draggable="false"
-          alt=""
-          aria-hidden="true"
-          class="h-7 hover:scale-105 trans flex-shrink-0" />
+      <p class="m-0 max-w-[34em] text-[clamp(17px,1.6vw,19px)] leading-[1.6] text-pretty text-gray">
+        FinTech dashboards, MetaTrader systems and trade copiers — built end to end by someone who trades.
+      </p>
+      <div class="flex flex-wrap gap-3 pt-2">
+        <NuxtLink to="/#work" class="btn-primary">See my work</NuxtLink>
+        <button type="button" class="btn-outline" @click="showcontact = true">Contact me</button>
       </div>
-      <hr class="border-bronze" />
-      <p class="text-justify text-base md:text-lg">
-        Hi, I'm Ana — a Ukrainian <b>Full-Stack developer</b> and digital designer based in Poland. I build functional
-        web applications from initial design to deployment.
+      <p class="m-0 font-mono text-[13px] leading-[1.6] text-ink-400">
+        Nuxt · Vue · NestJS · MongoDB · MQL4/5 · Ubuntu VPS
       </p>
     </div>
 
-    <div class="relative flex-1 w-full min-h-[400px] hidden md:block order-1 md:order-2">
-      <div class="absolute -top-10 right-10 w-50 h-50 bg-linear-0 from-brownblock to-bronze -z-10"></div>
-      <div class="absolute top-35 right-30 w-70 h-80 bg-[#B19B8C] -z-10"></div>
-      <NuxtImg src="hero/hero_img.png" class="absolute top-20 right-20 w-100 h-auto" />
-      <div class="absolute top-60 right-85 w-40 h-45 bg-linear-0 from-[#C1A79A] to-bronze -z-20"></div>
+    <div class="mx-auto w-full max-w-130 flex-[1_1_320px]">
+      <div class="relative aspect-square w-full">
+        <div class="absolute inset-x-[14%] top-[14%] bottom-0 bg-sand"></div>
+        <NuxtImg
+          src="hero/hero_img.png"
+          alt="Ana Balieieva"
+          draggable="false"
+          class="absolute inset-0 h-full w-full object-contain object-bottom" />
+      </div>
     </div>
   </section>
 </template>
 
-<script lang="ts" setup></script>
-
-<style scoped></style>
+<script lang="ts" setup>
+const showcontact = useState<boolean>('showcontact', () => false)
+</script>

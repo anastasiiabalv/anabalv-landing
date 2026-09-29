@@ -1,34 +1,72 @@
 @import 'tailwindcss';
 
 @theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-inter: 'Inter', sans-serif;
-  --font-mono: 'Geist Mono', monospace;
+  --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* brand colors (original names) */
   --color-bronze: #77513d;
   --color-milk: #fff9f6;
   --color-gray: #c5bbb6;
   --color-brownblock: #231c19;
+  --color-sand: #b19b8c;
+
+  /* espresso neutrals */
+  --color-ink-950: #0d0908;
+  --color-ink-900: #15110f;
+  --color-ink-850: #1b1613;
+  --color-ink-800: #231c19;
+  --color-ink-750: #2b2320;
+  --color-ink-700: #352c28;
+  --color-ink-600: #453d39;
+  --color-ink-500: #6b605a;
+  --color-ink-400: #928178;
+  --color-ink-300: #b19b8c;
+  --color-ink-200: #c5bbb6;
+  --color-ink-100: #e8e0db;
+  --color-ink-50: #fff9f6;
+
+  /* bronze accent */
+  --color-bronze-800: #3f2a1f;
+  --color-bronze-700: #5a3d2e;
+  --color-bronze-600: #77513d;
+  --color-bronze-500: #8f6650;
+  --color-bronze-400: #b08468;
+  --color-bronze-300: #c1a79a;
+  --color-bronze-200: #dcc8bc;
 }
 
 @layer base {
-  body {
-    @apply bg-[#15110F] text-milk font-normal;
-  }
   html {
     scroll-behavior: smooth;
     scrollbar-gutter: stable;
+    -webkit-font-smoothing: antialiased;
   }
-  h2 {
-    @apply text-5xl font-mono text-center mt-40 mb-10;
+  body {
+    @apply bg-ink-900 font-sans text-base leading-[1.6] font-normal text-milk;
   }
-  h3 {
-    @apply font-semibold text-2xl;
+  b,
+  strong {
+    @apply font-semibold text-milk;
   }
 
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 
   .page-enter-active,
   .page-leave-active {
-    transition: opacity 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                filter 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition:
+      opacity 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      filter 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   .page-enter-from,
   .page-leave-to {
@@ -37,33 +75,59 @@
   }
 }
 
-@utility btn-link {
-  @apply hover:text-gray trans hover:text-shadow-[0_0_10px_rgba(177,155,140,0.5)];
-}
-
-@utility btn-bronzelink {
-  @apply text-xl text-bronze trans w-fit font-semibold;
-   @apply hover:text-[#928178] hover:text-shadow-[0_0_10px_rgba(177,155,140,0.5)];
-   @apply active:text-milk;
-}
-
-@utility btn-bronzeblock {
-  @apply bg-bronze px-7 py-3 text-2xl trans font-mono mt-10 cursor-pointer active:bg-milk;
-  @apply hover:bg-[#928178] hover:shadow-[0_0_10px_rgba(177,155,140,0.5)];
-}
-
 @utility trans {
   @apply transition-all duration-300 ease-in-out;
 }
 
-@utility flexbox {
-  @apply flex flex-col justify-center items-center;
+@utility glow {
+  @apply text-shadow-[0_0_10px_rgba(177,155,140,0.5)];
 }
 
-@utility flexcol {
-  @apply flex flex-col gap-y-5;
-  & p,
-  & li {
-    @apply text-gray;
-  }
+/* sections */
+@utility section-pad {
+  @apply pt-[clamp(112px,14vw,160px)];
+}
+
+@utility eyebrow {
+  @apply m-0 font-mono text-xs tracking-[.08em] text-bronze-400 uppercase;
+}
+
+@utility section-title {
+  @apply m-0 font-mono text-[clamp(30px,4vw,44px)] leading-[1.2] font-normal text-balance;
+}
+
+/* buttons and links */
+@utility btn-primary {
+  @apply trans inline-flex min-h-12 cursor-pointer items-center justify-center bg-bronze px-6 font-mono text-base text-milk;
+  @apply hover:bg-bronze-500 hover:shadow-[0_0_10px_rgba(177,155,140,0.5)] active:bg-milk active:text-ink-900;
+}
+
+@utility btn-outline {
+  @apply trans inline-flex min-h-12 cursor-pointer items-center justify-center border border-bronze/50 px-6 font-mono text-base text-milk;
+  @apply hover:bg-ink-700 active:bg-milk active:text-ink-900;
+}
+
+@utility link-accent {
+  @apply trans cursor-pointer text-bronze-400 hover:text-milk hover:glow;
+}
+
+@utility link-muted {
+  @apply trans cursor-pointer text-gray hover:text-milk hover:glow;
+}
+
+/* content blocks */
+@utility bullet-list {
+  @apply m-0 flex list-disc flex-col gap-2 pl-4.5 leading-[1.55] text-gray;
+}
+
+@utility stat-value {
+  @apply m-0 font-mono text-3xl leading-none text-milk;
+}
+
+@utility stat-label {
+  @apply mt-2 mb-0 text-[13px] leading-[1.4] text-ink-400;
+}
+
+@utility card {
+  @apply flex flex-col gap-4.5 bg-ink-800 p-[clamp(28px,4vw,40px)];
 }
