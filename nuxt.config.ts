@@ -11,6 +11,12 @@ export default defineNuxtConfig({
       { name: 'Inter', provider: 'google' }
     ]
   },
+  image: {
+    format: ['webp'],
+    quality: 80,
+    // resized images are cached by the browser for 30 days
+    ipx: { maxAge: 60 * 60 * 24 * 30 }
+  },
   css: ['~/assets/css/main.css'],
   vite: {
     plugins: [tailwindcss()]

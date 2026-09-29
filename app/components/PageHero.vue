@@ -10,6 +10,12 @@
         <NuxtImg
           src="hero/hero_img.png"
           alt="Ana Balieieva"
+          width="520"
+          height="520"
+          sizes="sm:100vw md:520px"
+          format="webp"
+          preload
+          fetchpriority="high"
           draggable="false"
           class="absolute inset-0 h-full w-full object-contain object-bottom" />
       </div>

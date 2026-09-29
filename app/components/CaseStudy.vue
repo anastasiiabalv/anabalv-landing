@@ -32,6 +32,9 @@
             v-if="shot.src"
             :src="shot.src"
             :alt="shot.alt"
+            width="480"
+            sizes="sm:100vw md:50vw lg:360px"
+            format="webp"
             loading="lazy"
             class="block aspect-16/10 w-full border border-milk/10 object-cover object-top" />
           <div v-else class="aspect-16/10 w-full border border-milk/10 bg-ink-850"></div>
