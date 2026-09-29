@@ -1,6 +1,6 @@
 <template>
   <div class="pt-[clamp(48px,8vw,96px)]">
-    <h2 class="section-title mb-12">My tech stack</h2>
+    <h1 class="section-title mb-12">My tech stack</h1>
     <NuxtImg
       src="TEMP_techstack.svg"
       :indent="true"
@@ -9,6 +9,11 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
-
-<style scoped></style>
+<script lang="ts" setup>
+usePageSeo({
+  title: 'Tech stack',
+  description:
+    'The frameworks, databases and tools I use to build FinTech dashboards, MetaTrader systems and web apps.',
+  path: '/stack'
+})
+</script>

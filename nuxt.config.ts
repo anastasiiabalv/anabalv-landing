@@ -16,7 +16,21 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()]
   },
   app: {
-    pageTransition: { name: 'page', mode: 'out-in' }
+    pageTransition: { name: 'page', mode: 'out-in' },
+    head: {
+      htmlAttrs: { lang: 'en' },
+      titleTemplate: '%s · Ana Balieieva',
+      title: 'Ana Balieieva',
+      meta: [
+        {
+          name: 'description',
+          content:
+            'FinTech dashboards, MetaTrader systems and trade copiers — built end to end by a developer who trades.'
+        },
+        { name: 'theme-color', content: '#15110f' }
+      ],
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    }
   },
   runtimeConfig: {
     resend_mail: process.env.RESEND_MAIL,

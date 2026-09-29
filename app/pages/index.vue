@@ -23,6 +23,14 @@ onMounted(() => {
   }
 })
 
+usePageSeo({
+  title: 'Ana Balieieva · FinTech and MetaTrader developer',
+  description:
+    'FinTech dashboards, MetaTrader systems and trade copiers — built end to end by a developer who trades. MQL4/5, Nuxt, NestJS, VPS.',
+  path: '/',
+  fullTitle: true
+})
+
 definePageMeta({
   layout: 'default'
 })

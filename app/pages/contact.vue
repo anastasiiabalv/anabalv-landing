@@ -21,4 +21,10 @@
   </section>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+usePageSeo({
+  title: 'Contact',
+  description: 'Tell me what you trade and what you need built. Usually replies within a day.',
+  path: '/contact'
+})
+</script>

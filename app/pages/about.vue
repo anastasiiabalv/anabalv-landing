@@ -50,4 +50,11 @@ const principles = [
   { title: 'Real money, real security', text: 'Encrypted connections, least-access by default.' },
   { title: 'Clear, written communication', text: "You always know what's done, what's next and why." }
 ]
+
+usePageSeo({
+  title: 'About',
+  description:
+    'A trader who writes the code: about 5 years of trading, and the trading infrastructure, monitoring and web tools behind FX-ATS Group.',
+  path: '/about'
+})
 </script>
