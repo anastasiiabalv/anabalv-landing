@@ -10,6 +10,6 @@ export const contactEmail = ''
 export const socialLinks = [
   { name: 'LinkedIn', url: linkedinUrl },
   { name: 'GitHub', url: githubUrl },
-  { name: 'X', url: 'https://x.com/anastasiiabalv' },
-  { name: 'BlueSky', url: 'https://bsky.app/profile/anastasiiabalv.bsky.social' }
+  { name: 'X', url: 'https://x.com/anabalvdev' },
+  { name: 'BlueSky', url: 'https://bsky.app/profile/anabalvdev.bsky.social' }
 ]
