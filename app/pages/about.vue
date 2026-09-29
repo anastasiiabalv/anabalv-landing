@@ -37,7 +37,7 @@
     </section>
 
     <ToolkitSection />
-    <p class="mt-8 mb-0 font-mono text-sm text-ink-400">Based in Lublin, Poland · working with clients worldwide</p>
+    <p class="mt-8 mb-0 font-mono text-sm text-ink-400">Based in Poland · working with clients worldwide</p>
 
     <ContactSection to="/contact" />
   </div>
