@@ -2,17 +2,12 @@ import { describe, it, expect, vi, beforeEach } from 'vitest'
 import contactHandler from '../../server/api/contact.post.ts'
 
 const mockSend = vi.fn()
-vi.mock('resend', () => {
-  return {
-    Resend: vi.fn().mockImplementation(() => {
-      return {
-        emails: {
-          send: mockSend
-        }
-      }
-    })
+// a class, not an arrow mock: Vitest 4 can't `new` an arrow function
+vi.mock('resend', () => ({
+  Resend: class {
+    emails = { send: mockSend }
   }
-})
+}))
 
 vi.stubGlobal('useRuntimeConfig', () => ({
   resend_api: 'mock-secret-key-12345',
@@ -57,14 +52,19 @@ describe('Nitro Server Endpoint - POST /api/contact', () => {
   })
 })
 
+// minimal JSON POST event that h3's readBody() can read
 function createMockEvent(options: { body: Record<string, unknown> }) {
   return {
+    method: 'POST',
     context: {},
     node: {
-      req: {},
+      req: {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(options.body)
+      },
       res: {}
     },
-    _handled: false,
-    ...(options as unknown)
-  } as unknown as NodeJS.ReadableStream
+    _handled: false
+  } as unknown as Parameters<typeof contactHandler>[0]
 }
