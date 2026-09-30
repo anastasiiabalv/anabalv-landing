@@ -28,15 +28,6 @@ npm install
 npm run dev   # http://localhost:3000
 ```
 
-For the contact form, create `.env` in the project root:
-
-```ini
-RESEND_API_KEY=re_...          # Resend API key
-RESEND_MAIL=you@example.com    # where contact form messages are sent
-```
-
-Without them the site still runs; only the contact form can't send.
-
 ## Scripts
 
 | Command               | What it does                                          |
@@ -84,5 +75,3 @@ npm ci
 npm run build
 pm2 start ecosystem.config.cjs   # serves .output/server/index.mjs on port 7034, one process per CPU core
 ```
-
-`RESEND_API_KEY` and `RESEND_MAIL` must be set in the server environment.
