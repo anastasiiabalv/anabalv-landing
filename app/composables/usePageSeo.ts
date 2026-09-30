@@ -1,4 +1,4 @@
-export const SITE_URL = 'https://anastasiiabalv.com'
+export const SITE_URL = 'https://dev.anastasiiabalv.com'
 
 // title, description, canonical and social previews for one page
 export function usePageSeo(opts: { title: string; description: string; path: string; fullTitle?: boolean }) {
