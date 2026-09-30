@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: 'anabalv',
+      name: 'anabalvdev',
       script: './.output/server/index.mjs',
       exec_mode: 'cluster',
       instances: 'max',

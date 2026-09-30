@@ -1,8 +1,8 @@
-# anastasiiabalv.com
+# dev.anastasiiabalv.com
 
-Personal landing page of Ana Balieieva — FinTech dashboards, MetaTrader systems and trade copiers.
+Developer site of Ana Balieieva — FinTech dashboards, MetaTrader systems and trade copiers.
 
-**Live:** [anastasiiabalv.com](https://anastasiiabalv.com)
+**Live:** [dev.anastasiiabalv.com](https://dev.anastasiiabalv.com) · main landing: [anastasiiabalv.com](https://anastasiiabalv.com)
 
 ![Home page, desktop](docs/screenshots/home-desktop.png)
 
