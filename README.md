@@ -1,75 +1,88 @@
-# Nuxt Minimal Starter
+# anastasiiabalv.com
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Personal landing page of Ana Balieieva — FinTech dashboards, MetaTrader systems and trade copiers.
 
-## Setup
+**Live:** [anastasiiabalv.com](https://anastasiiabalv.com)
 
-Make sure to install dependencies:
+![Home page, desktop](docs/screenshots/home-desktop.png)
+
+| Mobile                                                 | About                                             | Contact                                               |
+| ------------------------------------------------------ | ------------------------------------------------- | ----------------------------------------------------- |
+| ![Home page, mobile](docs/screenshots/home-mobile.png) | ![About page](docs/screenshots/about-desktop.png) | ![Contact page](docs/screenshots/contact-desktop.png) |
+
+## Stack
+
+- [Nuxt 4](https://nuxt.com) + Vue 3, TypeScript
+- Tailwind CSS 4 (`@tailwindcss/vite`), `@nuxt/image`, `@nuxt/fonts`, VueUse
+- [Resend](https://resend.com) — sends the contact form messages by e-mail
+- Vitest (unit + Nuxt component tests), Playwright (end-to-end hydration check)
+- ESLint + Prettier, run on every commit by Husky and lint-staged
+- Production: Node server run by pm2
+
+## Quick start
+
+Needs Node.js 24.
 
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+npm run dev   # http://localhost:3000
 ```
 
-## Development Server
+For the contact form, create `.env` in the project root:
 
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+```ini
+RESEND_API_KEY=re_...          # Resend API key
+RESEND_MAIL=you@example.com    # where contact form messages are sent
 ```
 
-## Production
+Without them the site still runs; only the contact form can't send.
 
-Build the application for production:
+## Scripts
+
+| Command               | What it does                                          |
+| --------------------- | ----------------------------------------------------- |
+| `npm run dev`         | Dev server with hot reload                            |
+| `npm run build`       | Production build into `.output/`                      |
+| `npm run preview`     | Run the production build locally                      |
+| `npm test`            | Vitest: unit and Nuxt component tests                 |
+| `npx playwright test` | End-to-end test (page loads without hydration errors) |
+| `npx eslint .`        | Lint                                                  |
+| `npm run clean`       | Remove Nuxt build caches                              |
+
+## Project structure
+
+```text
+app/
+  pages/          index (landing), about, stack, contact
+  components/     page sections (Hero, Problems, Work, Services, Process, Proof, Toolkit, Contact, Footer…)
+  layouts/        default layout: navbar, footer, contact form modal
+  composables/    usePageSeo: titles, descriptions, social previews
+  utils/links.ts  social and profile links (LinkedIn, GitHub, Upwork…)
+  assets/css/     main.css: Tailwind setup, colour tokens, shared utilities (btn-primary, card…)
+server/api/       contact.post.ts: contact form endpoint (Resend)
+shared/types/     types shared by the app and the server
+public/           images, favicon
+test/
+  unit/           server logic (contact endpoint)
+  nuxt/           component tests in a Nuxt environment
+  e2e/            Playwright: hydration check
+docs/screenshots/ images for this README
+```
+
+## Pipelines
+
+- **Pull requests to `main`** — GitHub Actions ([test.yaml](.github/workflows/test.yaml)): install, lint, build,
+  then Playwright checks the built site for Vue hydration errors.
+- **Every commit** — Husky runs lint-staged: ESLint `--fix` and Prettier on changed `.vue/.ts/.js` files.
+- **Dependencies** — Renovate opens update PRs (see the Dependency Dashboard issue).
+- **Reviews** — CodeRabbit reviews pull requests ([.coderabbit.yaml](.coderabbit.yaml)).
+
+## Deploy
 
 ```bash
-# npm
+npm ci
 npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+pm2 start ecosystem.config.cjs   # serves .output/server/index.mjs on port 7034, one process per CPU core
 ```
 
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+`RESEND_API_KEY` and `RESEND_MAIL` must be set in the server environment.
