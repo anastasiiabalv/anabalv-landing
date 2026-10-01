@@ -14,7 +14,7 @@ describe('Hero Component', () => {
   it('renders the hero image', async () => {
     const component = await mountSuspended(MyHeroComponent)
 
-    const mainImg = component.find('img[src*="hero/hero_img.png"]')
+    const mainImg = component.find('img[src*="hero/hero_img.webp"]')
     expect(mainImg.exists()).toBe(true)
     expect(mainImg.attributes('alt')).toBe('Ana Balieieva')
   })
