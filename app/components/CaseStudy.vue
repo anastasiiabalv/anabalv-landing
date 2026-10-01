@@ -29,15 +29,17 @@
       <div
         class="grid min-w-0 flex-[1.3_1_440px] grid-cols-[repeat(auto-fit,minmax(min(100%,240px),1fr))] gap-x-5 gap-y-7">
         <figure v-for="shot in shots" :key="shot.caption" class="m-0 flex flex-col gap-2.5">
+          <!-- a single shot keeps its own proportions (e.g. a diagram), several are cropped to one grid -->
           <NuxtImg
             v-if="shot.src"
             :src="shot.src"
             :alt="shot.alt"
-            width="480"
-            sizes="sm:100vw md:50vw lg:360px"
+            :width="single ? 960 : 480"
+            :sizes="single ? 'sm:100vw lg:720px' : 'sm:100vw md:50vw lg:360px'"
             format="webp"
             loading="lazy"
-            class="block aspect-16/10 w-full border border-milk/10 object-cover object-top" />
+            class="block w-full border border-milk/10"
+            :class="single ? 'h-auto' : 'aspect-16/10 object-cover object-top'" />
           <div v-else class="aspect-16/10 w-full border border-milk/10 bg-ink-850"></div>
           <figcaption class="text-[13px] leading-[1.45] text-ink-400">{{ shot.caption }}</figcaption>
         </figure>
@@ -47,13 +49,15 @@
 </template>
 
 <script lang="ts" setup>
+import { computed } from 'vue'
+
 export interface CaseShot {
   src?: string
   alt?: string
   caption: string
 }
 
-defineProps<{
+const props = defineProps<{
   label: string
   title: string
   role: string
@@ -64,4 +68,6 @@ defineProps<{
   shots: CaseShot[]
   reverse?: boolean
 }>()
+
+const single = computed(() => props.shots.length === 1)
 </script>

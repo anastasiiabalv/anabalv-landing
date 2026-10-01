@@ -33,7 +33,6 @@
       ]"
       reverse />
 
-    <!-- screenshots will be added later -->
     <CaseStudy
       label="Case study 02"
       title="Trade copier"
@@ -50,10 +49,11 @@
         { value: '24/7', label: 'on VPS with auto-reconnect' }
       ]"
       :shots="[
-        { caption: 'Management console: live alerts and account control' },
-        { caption: 'Copier settings inside the EA: naming and colors' },
-        { caption: 'Master and slave accounts connected in real time' },
-        { caption: 'REST API used by the web panel' }
+        {
+          src: 'examples/copier_preview.png',
+          alt: 'Trade copier architecture: MT4/MT5 terminals, copier core, AES-encrypted API and NestJS REST API on a VPS, web panel and PyQt5 console',
+          caption: 'How it fits together: terminals, copier core, encrypted API on a VPS, web panel and desktop console'
+        }
       ]" />
   </div>
 </template>
