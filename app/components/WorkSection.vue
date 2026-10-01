@@ -19,17 +19,17 @@
       ]"
       :shots="[
         {
-          src: 'examples/fx_1.png',
+          src: 'examples/fx_1.webp',
           alt: 'FX-ATS monitor dashboard',
           caption: 'Monitor: equity curve, balance and period gains'
         },
-        { src: 'examples/fx_2.png', alt: 'FX-ATS landing page', caption: 'Marketing site' },
+        { src: 'examples/fx_2.webp', alt: 'FX-ATS landing page', caption: 'Marketing site' },
         {
-          src: 'examples/fx_3.png',
+          src: 'examples/fx_3.webp',
           alt: 'FX-ATS strategy overview',
           caption: 'Strategy overview with live performance'
         },
-        { src: 'examples/fx_4.png', alt: 'FX-ATS account connection', caption: 'Connecting a trading account' }
+        { src: 'examples/fx_4.webp', alt: 'FX-ATS account connection', caption: 'Connecting a trading account' }
       ]"
       reverse />
 
@@ -50,7 +50,7 @@
       ]"
       :shots="[
         {
-          src: 'examples/copier_preview.png',
+          src: 'examples/copier_preview.webp',
           alt: 'Trade copier architecture: MT4/MT5 terminals, copier core, AES-encrypted API and NestJS REST API on a VPS, web panel and PyQt5 console',
           caption: 'How it fits together: terminals, copier core, encrypted API on a VPS, web panel and desktop console'
         }

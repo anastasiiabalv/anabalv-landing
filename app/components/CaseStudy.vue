@@ -35,8 +35,6 @@
             :src="shot.src"
             :alt="shot.alt"
             :width="single ? 960 : 480"
-            :sizes="single ? 'sm:100vw lg:720px' : 'sm:100vw md:50vw lg:360px'"
-            format="webp"
             loading="lazy"
             class="block w-full border border-milk/10"
             :class="single ? 'h-auto' : 'aspect-16/10 object-cover object-top'" />

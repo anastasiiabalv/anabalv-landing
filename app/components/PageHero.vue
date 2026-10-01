@@ -8,12 +8,10 @@
       <div class="relative aspect-square w-full">
         <div class="absolute inset-x-[14%] top-[14%] bottom-0 bg-sand"></div>
         <NuxtImg
-          src="hero/hero_img.png"
+          src="hero/hero_img.webp"
           alt="Ana Balieieva"
           width="520"
           height="520"
-          sizes="sm:100vw md:520px"
-          format="webp"
           preload
           fetchpriority="high"
           draggable="false"
