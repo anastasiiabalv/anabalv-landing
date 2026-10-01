@@ -2,7 +2,7 @@
   <section class="section-pad">
     <p class="eyebrow mb-12">{{ label }}</p>
     <div class="flex flex-wrap items-start gap-x-16 gap-y-14" :class="{ 'flex-row-reverse': reverse }">
-      <div class="flex min-w-0 flex-[1_1_380px] flex-col gap-7">
+      <div class="@container flex min-w-0 flex-[1_1_380px] flex-col gap-7">
         <div class="flex items-center gap-4">
           <NuxtImg v-if="logo" :src="logo" :alt="title" class="block h-12 w-12 rounded-xl" />
           <div>
@@ -17,7 +17,8 @@
             <li v-for="item in built" :key="item">{{ item }}</li>
           </ul>
         </div>
-        <div class="grid grid-cols-3 gap-6 border-t border-ink-600 pt-6">
+        <!-- one column on narrow screens, so "2 yrs" and "< 1 s" don't break -->
+        <div class="grid grid-cols-1 gap-5 border-t border-ink-600 pt-6 @sm:grid-cols-3 @sm:gap-6">
           <div v-for="stat in stats" :key="stat.value">
             <p class="stat-value">{{ stat.value }}</p>
             <p class="stat-label">{{ stat.label }}</p>

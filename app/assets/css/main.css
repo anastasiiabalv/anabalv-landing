@@ -129,7 +129,7 @@
 }
 
 @utility stat-value {
-  @apply m-0 font-mono text-3xl leading-none text-milk;
+  @apply m-0 font-mono text-3xl leading-none whitespace-nowrap text-milk;
 }
 
 @utility stat-label {
