@@ -8,6 +8,7 @@
       </NuxtLink>
       <NuxtLink to="/about" class="link-muted py-1">About</NuxtLink>
       <NuxtLink to="/stack" class="link-muted py-1">Tech stack</NuxtLink>
+      <NuxtLink :to="mainSiteUrl" class="link-accent py-1">anastasiiabalv.com ↗</NuxtLink>
     </nav>
     <span>Based in Poland · Works worldwide</span>
   </footer>
