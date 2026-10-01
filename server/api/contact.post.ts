@@ -19,7 +19,7 @@ export default defineEventHandler(async (event) => {
     const data = await resend.emails.send({
       from: 'Portfolio Contact <onboarding@resend.dev>',
       to: MAIL || '',
-      subject: `New Portfolio Message from ${name}`,
+      subject: `New Portfolio Message from ${name} (dev.anastasiiabalv.com)`,
       text: `New Contact Form Submission\n\n` + `Name: ${name}\n` + `Email: ${email}\n\n` + `Message:\n${message}`
     })
     if (data.error && data.error?.statusCode != 200 && data.error?.statusCode != 201)
